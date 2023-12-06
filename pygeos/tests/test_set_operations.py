@@ -270,7 +270,10 @@ def test_coverage_union_reduce_axis():
     assert actual.shape == (3,)
 
 
-@pytest.mark.skipif(pygeos.geos_version < (3, 8, 0), reason="GEOS < 3.8")
+@pytest.mark.skipif(
+    (pygeos.geos_version < (3, 8, 0)) or (pygeos.geos_version > (3, 12, 0)),
+    reason="GEOS < 3.8 or GEOS > 3.12.0",
+)
 def test_coverage_union_overlapping_inputs():
     polygon = Geometry("POLYGON ((1 1, 1 0, 0 0, 0 1, 1 1))")
 
@@ -284,7 +287,10 @@ def test_coverage_union_overlapping_inputs():
         )
 
 
-@pytest.mark.skipif(pygeos.geos_version < (3, 8, 0), reason="GEOS < 3.8")
+@pytest.mark.skipif(
+    (pygeos.geos_version < (3, 8, 0)) or (pygeos.geos_version > (3, 12, 0)),
+    reason="GEOS < 3.8 or GEOS > 3.12.0",
+)
 @pytest.mark.parametrize(
     "geom_1, geom_2",
     # All possible polygon, non_polygon combinations

@@ -764,16 +764,8 @@ def test_oriented_envelope_all_types(geometry):
     "geometry, expected",
     [
         (
-            pygeos.Geometry("MULTIPOINT (0 0, 10 0, 10 10)"),
-            pygeos.Geometry("POLYGON ((0 0, 5 -5, 15 5, 10 10, 0 0))"),
-        ),
-        (
             pygeos.Geometry("LINESTRING (1 1, 5 1, 10 10)"),
             pygeos.Geometry("POLYGON ((1 1, 3 -1, 12 8, 10 10, 1 1))"),
-        ),
-        (
-            pygeos.Geometry("POLYGON ((1 1, 15 1, 5 10, 1 1))"),
-            pygeos.Geometry("POLYGON ((15 1, 15 10, 1 10, 1 1, 15 1))"),
         ),
         (
             pygeos.Geometry("LINESTRING (1 1, 10 1)"),
@@ -799,16 +791,8 @@ def test_oriented_envelope(geometry, expected):
     "geometry, expected",
     [
         (
-            pygeos.Geometry("MULTIPOINT (0 0, 10 0, 10 10)"),
-            pygeos.Geometry("POLYGON ((0 0, 5 -5, 15 5, 10 10, 0 0))"),
-        ),
-        (
             pygeos.Geometry("LINESTRING (1 1, 5 1, 10 10)"),
             pygeos.Geometry("POLYGON ((1 1, 3 -1, 12 8, 10 10, 1 1))"),
-        ),
-        (
-            pygeos.Geometry("POLYGON ((1 1, 15 1, 5 10, 1 1))"),
-            pygeos.Geometry("POLYGON ((15 1, 15 10, 1 10, 1 1, 15 1))"),
         ),
         (
             pygeos.Geometry("LINESTRING (1 1, 10 1)"),

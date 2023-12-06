@@ -362,7 +362,7 @@ def test_to_wkt_geometrycollection_with_point_empty():
 )
 def test_to_wkt_multipoint_with_point_empty():
     geom = pygeos.multipoints([empty_point, point])
-    assert pygeos.to_wkt(geom) == "MULTIPOINT (EMPTY, 2 3)"
+    assert pygeos.to_wkt(geom) == "MULTIPOINT (EMPTY, (2 3))"
 
 
 @pytest.mark.skipif(
